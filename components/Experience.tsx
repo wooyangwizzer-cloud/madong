@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Briefcase } from 'lucide-react';
 
 const Experience: React.FC = () => {
   const achievements = [
@@ -32,8 +33,11 @@ const Experience: React.FC = () => {
   return (
     <div className="max-w-6xl mx-auto">
       <div className="mb-16">
-        <h2 className="text-4xl font-black mb-4 uppercase italic">Milestones</h2>
-        <p className="text-slate-400">20년의 세월, 그 깊이가 다른 전략의 발자취</p>
+        <h2 className="text-4xl font-black mb-4 uppercase italic tracking-widest">Milestones</h2>
+        <div className="flex items-center gap-3 text-slate-400">
+          <Briefcase className="w-5 h-5 text-blue-500" />
+          <p>20년의 세월, 그 깊이가 다른 전략의 발자취</p>
+        </div>
       </div>
 
       <div className="relative border-l-2 border-slate-800 ml-4 md:ml-0 md:left-1/2">
@@ -41,7 +45,8 @@ const Experience: React.FC = () => {
           <div key={idx} className={`relative mb-16 md:w-1/2 ${idx % 2 === 0 ? 'md:pr-12 md:text-right md:-left-full' : 'md:pl-12 md:left-0'}`}>
             <div className={`absolute top-0 w-8 h-8 bg-blue-600 rounded-full border-4 border-slate-950 -left-[17px] md:left-auto ${idx % 2 === 0 ? 'md:-right-[17px]' : 'md:-left-[17px]'} shadow-[0_0_10px_rgba(37,99,235,1)]`}></div>
             
-            <div className="glass-panel p-8 rounded-2xl hover:border-blue-500/50 transition-all group">
+            <div className="glass-panel p-8 rounded-2xl hover:border-blue-500/50 transition-all group relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-1 bg-blue-500 h-0 group-hover:h-full transition-all duration-500"></div>
               <span className="inline-block px-3 py-1 bg-blue-900/50 text-blue-400 text-xs font-bold rounded mb-4 tracking-widest uppercase group-hover:bg-blue-600 group-hover:text-white transition-colors">
                 {item.year}
               </span>
@@ -56,7 +61,8 @@ const Experience: React.FC = () => {
       </div>
 
       <div className="text-center mt-8">
-        <div className="inline-block p-10 bg-slate-900 border border-slate-800 rounded-3xl w-full max-w-2xl">
+        <div className="inline-block p-10 bg-slate-900 border border-slate-800 rounded-3xl w-full max-w-2xl relative">
+          <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 px-6 py-1 rounded-full text-xs font-black italic shadow-lg shadow-blue-900/40">MASTER STRATEGIST</div>
           <h4 className="text-xl font-bold mb-4 text-blue-400">Total Career: 20 Years</h4>
           <p className="text-slate-500">
             수백 개의 프로젝트, 수천 번의 미팅, 그리고 하나의 목표.<br />

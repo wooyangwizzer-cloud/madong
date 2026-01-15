@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Zap, Cpu } from 'lucide-react';
 
 const Skills: React.FC = () => {
   const coreSkills = [
@@ -15,22 +16,23 @@ const Skills: React.FC = () => {
   return (
     <div className="max-w-6xl mx-auto">
       <div className="text-center mb-16">
-        <h2 className="text-4xl font-black mb-4 uppercase italic">Skills & Strengths</h2>
-        <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
+        <h2 className="text-4xl font-black mb-4 uppercase italic tracking-widest">Expertise</h2>
+        <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
       </div>
 
       <div className="grid md:grid-cols-2 gap-16 items-start">
         <div className="space-y-10">
           <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
-            <span className="w-2 h-8 bg-blue-500"></span> CORE COMPETENCIES
+            <Zap className="w-6 h-6 text-blue-500" />
+            <span className="tracking-tighter uppercase">Core Competencies</span>
           </h3>
           {coreSkills.map((skill, idx) => (
-            <div key={idx}>
+            <div key={idx} className="group">
               <div className="flex justify-between items-end mb-2">
-                <span className="text-lg font-bold">{skill.name}</span>
-                <span className="text-blue-400 font-black">{skill.percent}%</span>
+                <span className="text-lg font-bold group-hover:text-blue-400 transition-colors">{skill.name}</span>
+                <span className="text-blue-500 font-black tracking-tighter">{skill.percent}%</span>
               </div>
-              <div className="w-full h-3 bg-slate-800 rounded-full overflow-hidden mb-2">
+              <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden mb-2">
                 <div 
                   className="h-full bg-blue-600 rounded-full transition-all duration-1000 shadow-[0_0_15px_rgba(37,99,235,0.8)]"
                   style={{ width: `${skill.percent}%` }}
@@ -43,19 +45,20 @@ const Skills: React.FC = () => {
 
         <div>
           <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
-            <span className="w-2 h-8 bg-blue-500"></span> DIGITAL STACK
+            <Cpu className="w-6 h-6 text-blue-500" />
+            <span className="tracking-tighter uppercase">Digital Stack</span>
           </h3>
           <div className="flex flex-wrap gap-4">
             {tools.map((tool, idx) => (
-              <div key={idx} className="glass-panel px-6 py-4 rounded-lg border-l-4 border-blue-500 flex-grow text-center font-bold tracking-wider hover:bg-blue-600/20 transition-all cursor-default">
-                {tool}
+              <div key={idx} className="glass-panel px-6 py-4 rounded-lg border-l-4 border-blue-500 flex-grow text-center font-bold tracking-wider hover:bg-blue-600 transition-all cursor-default group">
+                <span className="group-hover:scale-110 inline-block transition-transform">{tool}</span>
               </div>
             ))}
           </div>
           
-          <div className="mt-12 p-8 border border-dashed border-slate-700 rounded-2xl bg-slate-900/30">
-            <p className="text-slate-400 italic text-center">
-              "기술은 도구일 뿐입니다. 중요한 것은 그 도구로 어떤 미래를 그리는가 하는 것입니다."
+          <div className="mt-12 p-8 border border-dashed border-slate-700 rounded-2xl bg-slate-900/30 group">
+            <p className="text-slate-400 italic text-center group-hover:text-blue-300 transition-colors">
+              "기술은 전략을 완성하는 마지막 퍼즐 조각입니다. 도구를 넘어 그 본질의 가치를 설계합니다."
             </p>
           </div>
         </div>
