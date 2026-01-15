@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -30,7 +30,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen selection:bg-blue-500 selection:text-white">
+    <div className="relative min-h-screen selection:bg-blue-500 selection:text-white bg-slate-950">
       <FuturisticBackground />
       <Header activeSection={activeSection} />
       
@@ -56,7 +56,7 @@ const App: React.FC = () => {
         </section>
       </main>
 
-      <footer className="relative z-10 py-12 text-center text-slate-500 border-t border-slate-800">
+      <footer className="relative z-10 py-12 text-center text-slate-500 border-t border-slate-800 bg-slate-950">
         <p>© 2024 MA DONG SEOK. All Rights Reserved.</p>
         <p className="text-xs mt-2 uppercase tracking-widest">Future Strategy Architect</p>
       </footer>
